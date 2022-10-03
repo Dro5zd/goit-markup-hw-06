@@ -8,5 +8,5 @@ const body = document.body;
 
 chgClrBtn.addEventListener('click', () => {
   span.textContent = getRandomHexColor();
-  body.style.backgroundColor = getRandomHexColor();
+  body.style.backgroundColor = span.textContent;
 });
