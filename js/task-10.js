@@ -9,12 +9,22 @@ const btnDestroy = document.querySelector('button[data-destroy]');
 
 let value = 0;
 
-input.addEventListener('input', (event) => value = event.currentTarget.value);
-
 btnCreate.addEventListener('click', () => createBoxes(value));
 
 btnDestroy.addEventListener('click', () => destroyBoxes(value));
 
+const initValue = (event) => {
+  value = event.currentTarget.value;
+  event.currentTarget.reset()
+};
+
+// const nullValue = (event) => {
+//   console.log(event.currentTarget);
+//   event.currentTarget.reset();
+//   console.log(event.currentTarget);
+// };
+
+input.addEventListener('input', initValue);
 
 const createBoxes = (amount) => {
   const markup = [];
@@ -28,10 +38,14 @@ const createBoxes = (amount) => {
     markup.push(li);
   }
   boxes.append(...markup);
+  input.value = ''
+  value=0;
 };
 
 const destroyBoxes = () => {
   boxes.innerHTML = '';
+  input.value = '';
+  value=0;
 };
 
 
