@@ -15,14 +15,8 @@ btnDestroy.addEventListener('click', () => destroyBoxes(value));
 
 const initValue = (event) => {
   value = event.currentTarget.value;
-  event.currentTarget.reset()
+  event.currentTarget.reset();
 };
-
-// const nullValue = (event) => {
-//   console.log(event.currentTarget);
-//   event.currentTarget.reset();
-//   console.log(event.currentTarget);
-// };
 
 input.addEventListener('input', initValue);
 
@@ -38,14 +32,14 @@ const createBoxes = (amount) => {
     markup.push(li);
   }
   boxes.append(...markup);
-  input.value = ''
-  value=0;
+  input.value = '';
+  value = 0;
 };
 
 const destroyBoxes = () => {
   boxes.innerHTML = '';
   input.value = '';
-  value=0;
+  value = 0;
 };
 
 
